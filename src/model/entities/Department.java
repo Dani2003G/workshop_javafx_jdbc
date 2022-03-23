@@ -4,70 +4,71 @@ import java.io.Serializable;
 
 public class Department implements Serializable {
 
+    // Attributes
+
 	private static final long serialVersionUID = 1L;
-
+	
 	private Integer id;
-	private String name;
-	
-	// CONSTRUCTORS
+    private String name;
 
-	public Department() {
-	}
+    // CONSTRUCTORS
 
-	public Department(Integer id, String name) {
-		this.id = id;
-		this.name = name;
-	}
-	
-	// GET and SET
+    public Department(){}
 
-	public Integer getId() {
-		return id;
-	}
+    public Department(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    // GET and SET
 
-	public String getName() {
-		return name;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	// HASCODE and EQUALS
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
-		return result;
-	}
+    public String getName() {
+        return name;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Department other = (Department) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
-		return true;
-	}
-	
-	// ToString
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	@Override
-	public String toString() {
-		return "Department [id=" + id + ", name=" + name + "]";
-	}
+    // HASCODE and EQUALS
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Department other = (Department) obj;
+        if (id == null) {
+            if (other.id != null)
+                return false;
+        } else if (!id.equals(other.id))
+            return false;
+        return true;
+    }
+
+    // ToString
+
+    @Override
+    public String toString() {
+        return "[Id = " + id + ", Name = " + name + "]";
+    }
 }
