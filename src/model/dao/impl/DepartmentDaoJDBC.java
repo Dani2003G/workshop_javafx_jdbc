@@ -34,9 +34,6 @@ public class DepartmentDaoJDBC implements DepartmentDao {
                 Statement.RETURN_GENERATED_KEYS
             );
 
-            if (obj.getName() == null)
-                throw new DbException("Name can't be null");
-
             st.setString(1, obj.getName());
 
             int rowsAffected = st.executeUpdate();
