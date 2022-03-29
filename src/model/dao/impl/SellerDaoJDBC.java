@@ -40,17 +40,6 @@ public class SellerDaoJDBC implements SellerDao {
                 Statement.RETURN_GENERATED_KEYS
             );
 
-            if (obj.getName() == null)
-                throw new DbException("Name can't be null");
-            if (obj.getEmail() == null)
-                throw new DbException("Email can't be null");
-            if (obj.getDepartment() == null)
-                throw new DbException("Department can't be null");
-            if (obj.getBirthDate() == null)
-                throw new DbException("Birth Date can't be null");
-            if (obj.getBaseSalary() == null)
-                throw new DbException("Base salary can't be null");
-
             st.setString(1, obj.getName());
             st.setString(2, obj.getEmail());
             st.setDate(3, new java.sql.Date(obj.getBirthDate().getTime()));
